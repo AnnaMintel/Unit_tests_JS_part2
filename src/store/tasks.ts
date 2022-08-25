@@ -97,10 +97,8 @@ export const isEvenSumGenerator2 = (arr: Array<number>) => {
     return even > odd
 }
 
-// 5 - функция isSquare
-// export const isSquare = (pl1: number, pl2: number) => {
-//     let diametrCircle = 0
-//     let diametrSquare = 0
-
-//     return 
-// }
+// 5 - функция isSquare, помещается ли круг в квадрат
+export const isSquare = (plCIRCLE: number, plSquare: number) => {
+  
+    return Math.sqrt(plSquare) > Math.sqrt(plCIRCLE / 3.14) * 2 
+}
