@@ -52,15 +52,55 @@ export const getTriangleType = (a: number, b: number, c: number) => {
     } else {
         result = "11"
     }
-
     return result;
 }
 
 // 3 - функция getSum of nums
 export const getSumOfNums = (number: number) => {
-
     return number.toString().split("").reduce((a, b) => a + Number(b), 0)
-
-
 }
 
+// 4 - функция isEvenSumGenerator
+export const isEvenSumGenerator = (arr: Array<number>) => {
+    let evenArr:any = [];
+    let unEvenArr:any = [];
+    for (let i = 0; i < arr.length; i++) {
+
+        if (i % 2 == 0) (
+            evenArr.push(arr[i])
+        )
+        if (i % 2 != 0) {
+            unEvenArr.push(arr[i])
+        }
+    }
+    function arrayEvenSum(){
+        let sum1 = 0;
+        for(let i = 0; i < evenArr.length; i++){
+            sum1 += evenArr[i];
+     }
+     return sum1
+    }
+     function arrayUNEvenSum (){
+        let sum2 = 0;
+        for(let i = 0; i < unEvenArr.length; i++){
+            sum2 += unEvenArr[i];
+     }
+     return sum2
+    }
+     return arrayEvenSum() > arrayUNEvenSum() ? true : false
+}
+//2 variant
+export const isEvenSumGenerator2 = (arr: Array<number>) => {
+    let odd = 0;
+    let even = 0;
+    arr.reduce( (acc, el, index) =>index % 2 === 0 ? even += el : odd += el)
+    return even > odd
+}
+
+// 5 - функция isSquare
+// export const isSquare = (pl1: number, pl2: number) => {
+//     let diametrCircle = 0
+//     let diametrSquare = 0
+
+//     return 
+// }
