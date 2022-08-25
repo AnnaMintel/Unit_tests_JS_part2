@@ -1,8 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { getTriangleType } from './store/tasks';
 
 function App() {
+
+
+  console.log(getTriangleType(5,5,2));
+
   return (
     <div className="App">
       <header className="App-header">

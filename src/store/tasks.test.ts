@@ -1,5 +1,7 @@
-import { ActionType, calculator, div, mult, sub, sum } from "./tasks"
+import { ActionType, calculator, div, getSumOfNums, getTriangleType, mult, sub, sum, summ } from "./tasks"
 
+
+// 1st lesson
  test ("check sum of numbers", () => {
     // 1 - тестовые данные
     const a:number = 3
@@ -42,3 +44,24 @@ test("calculator", () => {
     expect(calculator(10, actionSub) ).toBe(3)
 })
   
+
+// 2nd lesson
+//1
+test("check sum of nums", () => {
+   expect(summ(3, 4, 6, 10)).toBe(23)
+})
+
+//2
+test("check side of triangle", () => {
+   expect(getTriangleType(6, 4, 6)).toBe("01")
+   expect(getTriangleType(6, 6, 6)).toBe("10")
+   expect(getTriangleType(1, 2, 3)).toBe("00")
+   expect(getTriangleType(4, 11, 9)).toBe("11")
+})
+
+//3
+test("check sum", () => {
+   expect(getSumOfNums (6)).toBe(6)
+   expect(getSumOfNums (0)).toBe(0)
+   expect(getSumOfNums (123)).toBe(6)
+})
