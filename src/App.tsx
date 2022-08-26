@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { getTriangleType, isEvenSumGenerator, isSquare } from './store/tasks';
+import {  getTriangleType, isEvenSumGenerator, isSquare, iWantToGet } from './store/tasks';
 
 function App() {
 
-  console.log(isSquare(13, 16) )
+  console.log(iWantToGet(3677) )
 
   return (
     <div className="App">

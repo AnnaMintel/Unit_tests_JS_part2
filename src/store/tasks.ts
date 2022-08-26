@@ -62,8 +62,8 @@ export const getSumOfNums = (number: number) => {
 
 // 4 - функция isEvenSumGenerator
 export const isEvenSumGenerator = (arr: Array<number>) => {
-    let evenArr:any = [];
-    let unEvenArr:any = [];
+    let evenArr: any = [];
+    let unEvenArr: any = [];
     for (let i = 0; i < arr.length; i++) {
 
         if (i % 2 == 0) (
@@ -73,32 +73,50 @@ export const isEvenSumGenerator = (arr: Array<number>) => {
             unEvenArr.push(arr[i])
         }
     }
-    function arrayEvenSum(){
+    function arrayEvenSum() {
         let sum1 = 0;
-        for(let i = 0; i < evenArr.length; i++){
+        for (let i = 0; i < evenArr.length; i++) {
             sum1 += evenArr[i];
-     }
-     return sum1
+        }
+        return sum1
     }
-     function arrayUNEvenSum (){
+    function arrayUNEvenSum() {
         let sum2 = 0;
-        for(let i = 0; i < unEvenArr.length; i++){
+        for (let i = 0; i < unEvenArr.length; i++) {
             sum2 += unEvenArr[i];
-     }
-     return sum2
+        }
+        return sum2
     }
-     return arrayEvenSum() > arrayUNEvenSum() ? true : false
+    return arrayEvenSum() > arrayUNEvenSum() ? true : false
 }
 //2 variant
 export const isEvenSumGenerator2 = (arr: Array<number>) => {
     let odd = 0;
     let even = 0;
-    arr.reduce( (acc, el, index) =>index % 2 === 0 ? even += el : odd += el)
+    arr.reduce((acc, el, index) => index % 2 === 0 ? even += el : odd += el)
     return even > odd
 }
 
 // 5 - функция isSquare, помещается ли круг в квадрат
 export const isSquare = (plCIRCLE: number, plSquare: number) => {
-  
-    return Math.sqrt(plSquare) > Math.sqrt(plCIRCLE / 3.14) * 2 
+
+    return Math.sqrt(plSquare) > Math.sqrt(plCIRCLE / 3.14) * 2
+}
+
+// 6 - функция-банкомат
+export const iWantToGet = (amountRequired: number) => {
+    const availableBanknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
+    let res: any = []
+
+    if (amountRequired > 0) {
+        for (let i = 0; i < availableBanknotes.length; i++) {
+            let banknote = availableBanknotes[i];
+            
+            while (amountRequired - banknote >= 0) {
+                amountRequired -= banknote;
+                res.push(banknote);
+            }
+        } 
+    }
+        return res;
 }
